@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "image":"https://imgd.aeplcdn.com/370x208/n/cw/ec/130591/fronx-exterior-right-front-three-quarter-109.jpeg?isig=0&q=80",
+    "modal":"Toyota",
+    "name": "HONDA VEZEL E:HEV",
+    "price": 19457,
+    "year": 2022,
+    "mileage": "125,861 KM",
+    "wd": "2WD"
+  },
+  {
+    "id": 2,
+    "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFHrEEzOCwRN0BTOL9KcBXTn72C1F2pwPaqAFWJNZQag&s",
+    "modal":"Toyota",
+    "name": "Toyota 86",
+    "price": 18200,
+    "year": 2020,
+    "mileage": "125,861 KM",
+  
+    "wd": "2WD"
+  },
+  {
+    "id": 3,
+    "image":"https://static.autox.com/uploads/2023/09/Tata-Nexon-EV-Right-Front-Three-Quarter.jpg",
+    "modal":"Toyota",
+    "name": "TOYOTA VOXY",
+    "price": 2744,
+    "year": 2013,
+    "mileage": "125,861 ,KM",
+    "wd": "2WD"
+  },
+  {
+    "id": 4,
+    "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-UuHkSJrZCPuI21SUXRWvSRkxLtvcM2kzUowCraRg8DQgInazgQe27jqVnqTOv_VA7Xg&usqp=CAU",
+    "modal":"Toyota",
+    "name": "NISSAN SKYLINE",
+    "price": 27498,
+    "year": 2019,
+    "mileage": "125,861 KM",
+    "wd": "2WD"
+  },
+  {
+    "id": 5,
+    "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYDig1HK4kiYk2IM0Lbe1gIFOeZ3dx9czr7wH4oX1TZg&s",
+    "modal":"Toyota",
+    "name": "HONDA VEZEL E:HEV",
+    "price": 19457,
+    "year": 2022,
+    "mileage": "125,861 KM",
+    "wd": "2WD"
+  },
+  {
+    "id": 6,
+    "image":"https://www.carandbike.com/_next/image?url=https%3A%2F%2Fc.ndtvimg.com%2F2022-01%2F0d2m0qkg_car_625x300_12_January_22.jpg&w=3840&q=75",
+    "modal":"Toyota",
+    "name": "Toyota 86",
+    "price": 18200,
+    "year": 2020,
+    "mileage": "125,861 KM",
+    "wd": "2WD"
+  },
+  {
+    "id": 7,
+    "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEfYGHwkOE80Oa4M82ZWapyQlRPODY652JsmC8o78s4SjdjiwXOjlCHJHN2HUVrqleHOU&usqp=CAU",
+    "modal":"Toyota",
+    "name": "TOYOTA VOXY",
+    "price": 2744,
+    "year": 2013,
+    "mileage": "125,861 ,KM",
+    "wd": "2WD"
+  },
+  {
+    "id": 8,
+    "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJBQys0GryLM8NlXVsuK7Er2DzVc2xUS4wf_8ukcvu1w&s",
+    "modal":"Toyota",
+    "name": "NISSAN SKYLINE",
+    "price": 27498,
+    "year": 2019,
+    "mileage": "125,861, KM",
+    "wd": "2WD"
+  }
+]
