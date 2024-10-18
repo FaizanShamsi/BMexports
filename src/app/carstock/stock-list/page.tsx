@@ -979,11 +979,11 @@ export default function Page() {
                 <label className="mb-3 block text-sm font-medium text-black dark:text-white">
                   Stock Description
                 </label>
-                <JoditEditor
+                {/* <JoditEditor
                   ref={editor}
                   value={content}
                   onChange={(newContent) => setContent(newContent)}
-                />
+                /> */}
               </div>
               <div>
                 <label className="mb-3 block text-sm font-medium text-black dark:text-white">
