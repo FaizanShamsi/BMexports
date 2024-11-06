@@ -113,7 +113,7 @@ export default function Page() {
       grade: "",
       condition: "",
       options: options,
-      stock_description: content
+      stock_description: content,
     };
 
     console.log(stockData);
@@ -704,7 +704,9 @@ export default function Page() {
                 setContent(product.content);
                 const duplicate_options = [...options];
                 duplicate_options.forEach((option) => {
-                  const exists = product.options.find((x) => x === option.name);
+                  const exists = product.options.find(
+                    (x: any) => x === option.name,
+                  );
                   if (exists) {
                     option.checked = true;
                   }
