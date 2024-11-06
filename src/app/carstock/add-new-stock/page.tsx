@@ -57,7 +57,7 @@ const Page = () => {
     var reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function () {
-      setImageGallery((prev: any) => [...prev, reader.result]);
+      setImageGallery((prev: any) => [...prev, { src: reader.result }]);
     };
     reader.onerror = function (error) {
       console.log("Error: ", error);
@@ -65,20 +65,19 @@ const Page = () => {
   };
 
   const fetchStock = async () => {
+    console.log(selectedOption, "selectedOption");
     const stockData = {
       ...selectedOption,
       featured_image: image,
-      content: content,
-      isChecked: isChecked,
-      car_title: title,
-      car_price: price,
-      chassis_no: chassis,
-      engine: engine,
-      mileage: mileage,
-      seating: seating,
-      loading_capacity: capacity,
-      image_gallery: imagegallery
+      image_gallery: imagegallery,
+      ref_no: "",
+      grade: "",
+      condition: "",
+      options: options,
+      stock_description: content
     };
+
+    console.log(options, "options");
 
     console.log(stockData);
 
@@ -592,9 +591,9 @@ const Page = () => {
         <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:w-full md:w-203">
           <div className="flex flex-col gap-5.5 p-6.5">
             <SelectGroupTwo
-              selectedOption={selectedOption.car}
+              selectedOption={selectedOption.placement}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, car: e })
+                setSelectedOption({ ...selectedOption, placement: e })
               }
               heading="Car Placement"
               options={placements}
@@ -638,25 +637,32 @@ const Page = () => {
                 Car Title
               </label>
               <input
-                onChange={(e) => setTitle(e.target.value)}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                  setSelectedOption({
+                    ...selectedOption,
+                    car_title: e.target.value,
+                  });
+                }}
                 type="text"
                 placeholder="Enter the car title"
                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                value={selectedOption.car_title}
               />
             </div>
             <SelectGroupTwo
-              selectedOption={selectedOption.machineryType}
+              selectedOption={selectedOption.machinery_type}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, machineryType: e })
+                setSelectedOption({ ...selectedOption, machinery_type: e })
               }
               heading="Machinery Type "
               spanText="Add Machinery Type"
               options={machineries}
             />
             <SelectGroupTwo
-              selectedOption={selectedOption.carPriceRange}
+              selectedOption={selectedOption.price_range}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, carPriceRange: e })
+                setSelectedOption({ ...selectedOption, price_range: e })
               }
               heading="Car Price Range "
               spanText="Add Car Price Range"
@@ -667,34 +673,41 @@ const Page = () => {
                 Car Price
               </label>
               <input
-                onChange={(e) => setPrice(e.target.value)}
+                onChange={(e) => {
+                  setPrice(e.target.value);
+                  setSelectedOption({
+                    ...selectedOption,
+                    car_price: e.target.value,
+                  });
+                }}
                 type="text"
                 placeholder="Enter Car Price"
                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                value={selectedOption.car_price}
               />
             </div>
             <SelectGroupTwo
-              selectedOption={selectedOption.carMake}
+              selectedOption={selectedOption.make}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, carMake: e })
+                setSelectedOption({ ...selectedOption, make: e })
               }
               heading="Car Make "
               spanText="Add Car Make"
               options={makes}
             />
             <SelectGroupTwo
-              selectedOption={selectedOption.carModal}
+              selectedOption={selectedOption.car_model}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, carModal: e })
+                setSelectedOption({ ...selectedOption, car_model: e })
               }
               heading="Car Model "
               spanText="Add Car Model"
               options={models}
             />
             <SelectGroupTwo
-              selectedOption={selectedOption.vehicleType}
+              selectedOption={selectedOption.vehicle_type}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, vehicleType: e })
+                setSelectedOption({ ...selectedOption, vehicle_type: e })
               }
               heading="Vehicle Type "
               spanText="Add Vehicle Type"
@@ -723,25 +736,32 @@ const Page = () => {
                 Chassis No
               </label>
               <input
-                onChange={(e) => setChassis(e.target.value)}
+                onChange={(e) => {
+                  setChassis(e.target.value);
+                  setSelectedOption({
+                    ...selectedOption,
+                    chassis_no: e.target.value,
+                  });
+                }}
                 type="text"
                 placeholder="Enter the chassis number #"
                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                value={selectedOption.chassis_no}
               />
             </div>
             <SelectGroupTwo
-              selectedOption={selectedOption.driveType}
+              selectedOption={selectedOption.drive_type}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, driveType: e })
+                setSelectedOption({ ...selectedOption, drive_type: e })
               }
               heading="Drive Type "
               spanText="Add Drive Type"
               options={driverTypes}
             />
             <SelectGroupTwo
-              selectedOption={selectedOption.fuelType}
+              selectedOption={selectedOption.fuel_type}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, fuelType: e })
+                setSelectedOption({ ...selectedOption, fuel_type: e })
               }
               heading="Fuel Type "
               spanText="Add Fuel Type"
@@ -770,16 +790,23 @@ const Page = () => {
                 Engine CC
               </label>
               <input
-                onChange={(e) => setEngine(e.target.value)}
+                onChange={(e) => {
+                  setEngine(e.target.value);
+                  setSelectedOption({
+                    ...selectedOption,
+                    engine: e.target.value,
+                  });
+                }}
                 type="text"
                 placeholder="Enter Engine #"
                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                value={selectedOption.engine}
               />
             </div>
             <SelectGroupTwo
-              selectedOption={selectedOption.mileageRange}
+              selectedOption={selectedOption.mileage_range}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, mileageRange: e })
+                setSelectedOption({ ...selectedOption, mileage_range: e })
               }
               heading="Mileage Range "
               spanText="Add Mileage Range"
@@ -792,16 +819,21 @@ const Page = () => {
               <input
                 onChange={(e) => {
                   setMileage(e.target.value);
+                  setSelectedOption({
+                    ...selectedOption,
+                    mileage: e.target.value,
+                  });
                 }}
                 type="text"
                 placeholder="Enter Mileage "
                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                value={selectedOption.mileage}
               />
             </div>
             <SelectGroupTwo
-              selectedOption={selectedOption.bodyType}
+              selectedOption={selectedOption.body_type}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, bodyType: e })
+                setSelectedOption({ ...selectedOption, body_type: e })
               }
               heading="Body Type "
               spanText="Add Body Type"
@@ -830,10 +862,17 @@ const Page = () => {
                 Seating
               </label>
               <input
-                onChange={(e) => setSeating(e.target.value)}
+                onChange={(e) => {
+                  setSeating(e.target.value);
+                  setSelectedOption({
+                    ...selectedOption,
+                    seating: e.target.value,
+                  });
+                }}
                 type="text"
                 placeholder="Enter Seating "
                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                value={selectedOption.seating}
               />
             </div>
             <div>
@@ -841,16 +880,23 @@ const Page = () => {
                 Loading Capacity
               </label>
               <input
-                onChange={(e) => setCapacity(e.target.value)}
+                onChange={(e) => {
+                  setCapacity(e.target.value);
+                  setSelectedOption({
+                    ...selectedOption,
+                    loading_capacity: e.target.value,
+                  });
+                }}
                 type="text"
                 placeholder="Enter Loading Capacity "
                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                value={selectedOption.loading_capacity}
               />
             </div>
             <label className="mb-2 block text-sm font-medium text-black dark:text-white">
               Option <span className="text-[#008cff]">Add Option</span>
             </label>
-            {options.map((checkbox: any, index) => (
+            {options.map((checkbox: any, index: any) => (
               <CheckboxTwo
                 key={index}
                 name={checkbox.name}
@@ -863,11 +909,11 @@ const Page = () => {
               <label className="mb-3 block text-sm font-medium text-black dark:text-white">
                 Stock Description
               </label>
-              {/* <JoditEditor
+              <JoditEditor
                 ref={editor}
                 value={content}
                 onChange={(newContent) => setContent(newContent)}
-              /> */}
+              />
             </div>
             <div>
               <label className="mb-3 block text-sm font-medium text-black dark:text-white">
@@ -889,9 +935,14 @@ const Page = () => {
                   className="border-gray-300 bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600 flex h-50 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed"
                 >
                   {imagegallery.length > 0 ? (
-                    <div className="flex items-center justify-center">
-                      {imagegallery.map((image: any) => (
-                        <img key={image} src={image} width="100px" height="100px" />
+                    <div className="flex flex-wrap items-center justify-center">
+                      {imagegallery.map((image: any, index: any) => (
+                        <img
+                          src={image?.src}
+                          key={index}
+                          width="100px"
+                          height="100px"
+                        />
                       ))}
                     </div>
                   ) : (
