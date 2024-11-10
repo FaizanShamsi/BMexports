@@ -24,7 +24,7 @@ export default function Page() {
   const fetchVehicleType = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-types",
+        "https://bmexportsbackend.creatixtech.com/api/all-types",
         {
           method: "GET",
           headers: {
@@ -74,7 +74,7 @@ export default function Page() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/update-type/${editId}`,
+        `https://bmexportsbackend.creatixtech.com/api/update-type/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -104,7 +104,7 @@ export default function Page() {
 
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/delete-type/${id}`,
+        `https://bmexportsbackend.creatixtech.com/api/delete-type/${id}`,
         {
           method: "DELETE",
         },

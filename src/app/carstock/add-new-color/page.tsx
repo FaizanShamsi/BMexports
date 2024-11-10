@@ -11,7 +11,7 @@ const Page = () => {
   const fetchColor = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/add-car-color",
+        "https://bmexportsbackend.creatixtech.com/api/add-car-color",
         {
           method: "POST",
           headers: {

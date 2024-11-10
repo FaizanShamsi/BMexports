@@ -11,7 +11,7 @@ const Page = () => {
   const fetchDoor = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/add-car-door",
+        "https://bmexportsbackend.creatixtech.com/api/add-car-door",
         {
           method: "POST",
           headers: {

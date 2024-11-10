@@ -21,7 +21,7 @@ export default function Page() {
   const fetchTransmission = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-transmissions",
+        "https://bmexportsbackend.creatixtech.com/api/all-transmissions",
         {
           method: "GET",
           headers: {
@@ -59,7 +59,7 @@ export default function Page() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/update-transmission/${editId}`,
+        `https://bmexportsbackend.creatixtech.com/api/update-transmission/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -88,7 +88,7 @@ export default function Page() {
 
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/delete-transmission/${id}`,
+        `https://bmexportsbackend.creatixtech.com/api/delete-transmission/${id}`,
         {
           method: "DELETE",
         },

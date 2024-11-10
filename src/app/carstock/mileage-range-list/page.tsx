@@ -21,7 +21,7 @@ export default function Page() {
   const fetchMileageRange = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-mrs",
+        "https://bmexportsbackend.creatixtech.com/api/all-mrs",
         {
           method: "GET",
           headers: {
@@ -59,7 +59,7 @@ export default function Page() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/update-mr/${editId}`,
+        `https://bmexportsbackend.creatixtech.com/api/update-mr/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -88,7 +88,7 @@ export default function Page() {
 
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/delete-mr/${id}`,
+        `https://bmexportsbackend.creatixtech.com/api/delete-mr/${id}`,
         {
           method: "DELETE",
         },

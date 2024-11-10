@@ -23,7 +23,7 @@ const Page = () => {
   const fetchMakes = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/add-car-make",
+        "https://bmexportsbackend.creatixtech.com/api/add-car-make",
         {
           method: "POST",
           headers: {

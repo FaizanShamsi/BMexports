@@ -11,7 +11,7 @@ const Page = () => {
   const fetchPlacement = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/add-car-placement",
+        "https://bmexportsbackend.creatixtech.com/api/add-car-placement",
         {
           method: "POST",
           headers: {

@@ -21,7 +21,7 @@ export default function Page() {
   const fetchPriceRange = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-prs",
+        "https://bmexportsbackend.creatixtech.com/api/all-prs",
         {
           method: "GET",
           headers: {
@@ -59,7 +59,7 @@ export default function Page() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/update-pr/${editId}`,
+        `https://bmexportsbackend.creatixtech.com/api/update-pr/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -88,7 +88,7 @@ export default function Page() {
 
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/delete-pr/${id}`,
+        `https://bmexportsbackend.creatixtech.com/api/delete-pr/${id}`,
         {
           method: "DELETE",
         },

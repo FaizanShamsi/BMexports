@@ -74,7 +74,7 @@ const Page = () => {
       grade: "",
       condition: "",
       options: options,
-      stock_description: content
+      stock_description: content,
     };
 
     console.log(options, "options");
@@ -83,7 +83,7 @@ const Page = () => {
 
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/add-new-stock",
+        "https://bmexportsbackend.creatixtech.com/api/add-new-stock",
         {
           method: "POST",
           headers: {
@@ -103,7 +103,7 @@ const Page = () => {
   const fetchPlacements = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-placements",
+        "https://bmexportsbackend.creatixtech.com/api/all-placements",
         {
           method: "GET",
           headers: {
@@ -129,7 +129,7 @@ const Page = () => {
   const fetchMachinery = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-machinery-types",
+        "https://bmexportsbackend.creatixtech.com/api/all-machinery-types",
         {
           method: "GET",
           headers: {
@@ -155,7 +155,7 @@ const Page = () => {
   const fetchPriceRagnges = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-prs",
+        "https://bmexportsbackend.creatixtech.com/api/all-prs",
         {
           method: "GET",
           headers: {
@@ -181,7 +181,7 @@ const Page = () => {
   const fetchMakes = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-makes",
+        "https://bmexportsbackend.creatixtech.com/api/all-makes",
         {
           method: "GET",
           headers: {
@@ -207,7 +207,7 @@ const Page = () => {
   const fetchModels = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-models",
+        "https://bmexportsbackend.creatixtech.com/api/all-models",
         {
           method: "GET",
           headers: {
@@ -233,7 +233,7 @@ const Page = () => {
   const fetchVehicleTypes = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-types",
+        "https://bmexportsbackend.creatixtech.com/api/all-types",
         {
           method: "GET",
           headers: {
@@ -259,7 +259,7 @@ const Page = () => {
   const fetchMonths = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-months",
+        "https://bmexportsbackend.creatixtech.com/api/all-months",
         {
           method: "GET",
           headers: {
@@ -285,7 +285,7 @@ const Page = () => {
   const fetchYears = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-years",
+        "https://bmexportsbackend.creatixtech.com/api/all-years",
         {
           method: "GET",
           headers: {
@@ -311,7 +311,7 @@ const Page = () => {
   const fetchDriverTypes = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-dts",
+        "https://bmexportsbackend.creatixtech.com/api/all-dts",
         {
           method: "GET",
           headers: {
@@ -337,7 +337,7 @@ const Page = () => {
   const fetchFuelTypes = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-fts",
+        "https://bmexportsbackend.creatixtech.com/api/all-fts",
         {
           method: "GET",
           headers: {
@@ -363,7 +363,7 @@ const Page = () => {
   const fetchTrasmissions = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-transmissions",
+        "https://bmexportsbackend.creatixtech.com/api/all-transmissions",
         {
           method: "GET",
           headers: {
@@ -389,7 +389,7 @@ const Page = () => {
   const fetchColors = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-colors",
+        "https://bmexportsbackend.creatixtech.com/api/all-colors",
         {
           method: "GET",
           headers: {
@@ -415,7 +415,7 @@ const Page = () => {
   const fetchMileage = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-mrs",
+        "https://bmexportsbackend.creatixtech.com/api/all-mrs",
         {
           method: "GET",
           headers: {
@@ -441,7 +441,7 @@ const Page = () => {
   const fetchBodyType = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-bts",
+        "https://bmexportsbackend.creatixtech.com/api/all-bts",
         {
           method: "GET",
           headers: {
@@ -467,7 +467,7 @@ const Page = () => {
   const fetchDoors = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-doors",
+        "https://bmexportsbackend.creatixtech.com/api/all-doors",
         {
           method: "GET",
           headers: {
@@ -493,7 +493,7 @@ const Page = () => {
   const fetchSteering = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-steerings",
+        "https://bmexportsbackend.creatixtech.com/api/all-steerings",
         {
           method: "GET",
           headers: {
@@ -519,7 +519,7 @@ const Page = () => {
   const fetchOptions = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-options",
+        "https://bmexportsbackend.creatixtech.com/api/all-options",
         {
           method: "GET",
           headers: {

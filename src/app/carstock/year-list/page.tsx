@@ -29,7 +29,7 @@ export default function ViewCarStock() {
   const fetchYear = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-years",
+        "https://bmexportsbackend.creatixtech.com/api/all-years",
         {
           method: "GET",
           headers: {
@@ -60,7 +60,7 @@ export default function ViewCarStock() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/update-year/${editId}`,
+        `https://bmexportsbackend.creatixtech.com/api/update-year/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -89,7 +89,7 @@ export default function ViewCarStock() {
 
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/delete-year/${id}`,
+        `https://bmexportsbackend.creatixtech.com/api/delete-year/${id}`,
         {
           method: "DELETE",
         },

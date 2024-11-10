@@ -11,7 +11,7 @@ const Page = () => {
   const fetchTransmission = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/add-car-transmission",
+        "https://bmexportsbackend.creatixtech.com/api/add-car-transmission",
         {
           method: "POST",
           headers: {

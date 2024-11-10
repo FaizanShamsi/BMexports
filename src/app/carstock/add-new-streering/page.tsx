@@ -11,7 +11,7 @@ const Page = () => {
   const fetchSteering = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/add-car-steering",
+        "https://bmexportsbackend.creatixtech.com/api/add-car-steering",
         {
           method: "POST",
           headers: {

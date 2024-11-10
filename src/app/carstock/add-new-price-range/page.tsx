@@ -11,7 +11,7 @@ const Page = () => {
   const fetchPriceRange = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/add-car-pr",
+        "https://bmexportsbackend.creatixtech.com/api/add-car-pr",
         {
           method: "POST",
           headers: {

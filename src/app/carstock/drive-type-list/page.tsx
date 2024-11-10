@@ -21,7 +21,7 @@ export default function Page() {
   const fetchDriveType = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-dts",
+        "https://bmexportsbackend.creatixtech.com/api/all-dts",
         {
           method: "GET",
           headers: {
@@ -59,7 +59,7 @@ export default function Page() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/update-dt/${editId}`,
+        `https://bmexportsbackend.creatixtech.com/api/update-dt/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -88,7 +88,7 @@ export default function Page() {
 
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/delete-dt/${id}`,
+        `https://bmexportsbackend.creatixtech.com/api/delete-dt/${id}`,
         {
           method: "DELETE",
         },

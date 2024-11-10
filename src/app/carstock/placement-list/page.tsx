@@ -21,7 +21,7 @@ export default function Page() {
   const fetchPlacements = async () => {
     try {
       const response = await fetch(
-        "https://bmexports.elitecoderstestlink.com/api/all-placements",
+        "https://bmexportsbackend.creatixtech.com/api/all-placements",
         {
           method: "GET",
           headers: {
@@ -52,7 +52,7 @@ export default function Page() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/update-placement/${editId}`,
+        `https://bmexportsbackend.creatixtech.com/api/update-placement/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -81,7 +81,7 @@ export default function Page() {
 
     try {
       const response = await fetch(
-        `https://bmexports.elitecoderstestlink.com/api/delete-placement/${id}`,
+        `https://bmexportsbackend.creatixtech.com/api/delete-placement/${id}`,
         {
           method: "DELETE",
         },
