@@ -185,7 +185,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({ label: item.placement, value: item.placement });
+        processedData.push({ label: item.placement, value: item.id });
       });
       setPlacement(processedData);
     } catch (err: any) {
@@ -211,10 +211,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({
-          label: item.machinery_type,
-          value: item.machinery_type,
-        });
+        processedData.push({ label: item.machinery_type, value: item.id });
       });
       setMachinery(processedData);
     } catch (err: any) {
@@ -240,10 +237,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({
-          label: item.price_range,
-          value: item.price_range,
-        });
+        processedData.push({ label: item.price_range, value: item.id });
       });
       setPriceRanges(processedData);
     } catch (err: any) {
@@ -269,7 +263,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({ label: item.Make, value: item.Make });
+        processedData.push({ label: item.Make, value: item.id });
       });
       setMakes(processedData);
     } catch (err: any) {
@@ -295,7 +289,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({ label: item.car_model, value: item.car_model });
+        processedData.push({ label: item.car_model, value: item.id });
       });
       setModels(processedData);
     } catch (err: any) {
@@ -321,10 +315,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({
-          label: item.vehicle_type,
-          value: item.vehicle_type,
-        });
+        processedData.push({ label: item.vehicle_type, value: item.id });
       });
       setVehicleTypes(processedData);
     } catch (err: any) {
@@ -350,7 +341,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({ label: item.Month, value: item.Month });
+        processedData.push({ label: item.Month, value: item.id });
       });
       setMonths(processedData);
     } catch (err: any) {
@@ -376,7 +367,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({ label: item.Year, value: item.Year });
+        processedData.push({ label: item.Year, value: item.id });
       });
       setYears(processedData);
     } catch (err: any) {
@@ -402,7 +393,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({ label: item.drive_type, value: item.drive_type });
+        processedData.push({ label: item.drive_type, value: item.id });
       });
       setDriverTypes(processedData);
     } catch (err: any) {
@@ -428,7 +419,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({ label: item.fuel_type, value: item.fuel_type });
+        processedData.push({ label: item.fuel_type, value: item.id });
       });
       setFuelTypes(processedData);
     } catch (err: any) {
@@ -454,10 +445,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({
-          label: item.transmission,
-          value: item.transmission,
-        });
+        processedData.push({ label: item.transmission, value: item.id });
       });
       setTransmissions(processedData);
     } catch (err: any) {
@@ -483,7 +471,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({ label: item.color, value: item.color });
+        processedData.push({ label: item.color, value: item.id });
       });
       setColors(processedData);
     } catch (err: any) {
@@ -509,10 +497,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({
-          label: item.mileage_range,
-          value: item.mileage_range,
-        });
+        processedData.push({ label: item.mileage_range, value: item.id });
       });
       setMileageRange(processedData);
     } catch (err: any) {
@@ -538,7 +523,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({ label: item.body_type, value: item.body_type });
+        processedData.push({ label: item.body_type, value: item.id });
       });
       setBodyType(processedData);
     } catch (err: any) {
@@ -564,7 +549,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({ label: item.door, value: item.door });
+        processedData.push({ label: item.door, value: item.id });
       });
       setDoors(processedData);
     } catch (err: any) {
@@ -590,7 +575,7 @@ export default function Page() {
       const data = await response.json();
       const processedData: any = [];
       data.map((item: any) => {
-        processedData.push({ label: item.steering, value: item.steering });
+        processedData.push({ label: item.steering, value: item.id });
       });
       setSteering(processedData);
     } catch (err: any) {
