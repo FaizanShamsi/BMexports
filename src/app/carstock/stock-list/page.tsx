@@ -739,7 +739,7 @@ export default function Page() {
               <SelectGroupTwo
                 selectedOption={selectedOption.placement}
                 setSelectedOption={(e) =>
-                  setSelectedOption({ ...selectedOption, placement: e?.value })
+                  setSelectedOption({ ...selectedOption, placement: e })
                 }
                 heading="Car Placement"
                 options={placements}
@@ -747,7 +747,7 @@ export default function Page() {
               {/* <SelectGroupTwo
               selectedOption={selectedOption.car}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, car: e?.value })
+                setSelectedOption({ ...selectedOption, car: e })
               }
               heading="Select a Car"
               options={[
@@ -759,7 +759,7 @@ export default function Page() {
               <SelectGroupTwo
                 selectedOption={selectedOption.sold}
                 setSelectedOption={(e) =>
-                  setSelectedOption({ ...selectedOption, sold: e?.value })
+                  setSelectedOption({ ...selectedOption, sold: e })
                 }
                 heading="Sold"
                 options={[
@@ -770,7 +770,7 @@ export default function Page() {
               <SelectGroupTwo
                 selectedOption={selectedOption.reserved}
                 setSelectedOption={(e) =>
-                  setSelectedOption({ ...selectedOption, reserved: e?.value })
+                  setSelectedOption({ ...selectedOption, reserved: e })
                 }
                 heading="Reserved"
                 options={[
@@ -801,7 +801,7 @@ export default function Page() {
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
-                    machinery_type: e?.value,
+                    machinery_type: e,
                   })
                 }
                 heading="Machinery Type "
@@ -813,7 +813,7 @@ export default function Page() {
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
-                    price_range: e?.value,
+                    price_range: e,
                   })
                 }
                 heading="Car Price Range "
@@ -841,7 +841,7 @@ export default function Page() {
               <SelectGroupTwo
                 selectedOption={selectedOption.make}
                 setSelectedOption={(e) =>
-                  setSelectedOption({ ...selectedOption, make: e?.value })
+                  setSelectedOption({ ...selectedOption, make: e })
                 }
                 heading="Car Make "
                 spanText="Add Car Make"
@@ -850,7 +850,7 @@ export default function Page() {
               <SelectGroupTwo
                 selectedOption={selectedOption.car_model}
                 setSelectedOption={(e) =>
-                  setSelectedOption({ ...selectedOption, car_model: e?.value })
+                  setSelectedOption({ ...selectedOption, car_model: e })
                 }
                 heading="Car Model "
                 spanText="Add Car Model"
@@ -861,7 +861,7 @@ export default function Page() {
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
-                    vehicle_type: e?.value,
+                    vehicle_type: e,
                   })
                 }
                 heading="Vehicle Type "
@@ -871,7 +871,7 @@ export default function Page() {
               <SelectGroupTwo
                 selectedOption={selectedOption.month}
                 setSelectedOption={(e) =>
-                  setSelectedOption({ ...selectedOption, month: e?.value })
+                  setSelectedOption({ ...selectedOption, month: e })
                 }
                 heading="Month "
                 spanText="Add Month"
@@ -880,7 +880,7 @@ export default function Page() {
               <SelectGroupTwo
                 selectedOption={selectedOption.year}
                 setSelectedOption={(e) =>
-                  setSelectedOption({ ...selectedOption, year: e?.value })
+                  setSelectedOption({ ...selectedOption, year: e })
                 }
                 heading="Year "
                 spanText="Add Year"
@@ -907,7 +907,7 @@ export default function Page() {
               <SelectGroupTwo
                 selectedOption={selectedOption.drive_type}
                 setSelectedOption={(e) =>
-                  setSelectedOption({ ...selectedOption, drive_type: e?.value })
+                  setSelectedOption({ ...selectedOption, drive_type: e })
                 }
                 heading="Drive Type "
                 spanText="Add Drive Type"
@@ -916,7 +916,7 @@ export default function Page() {
               <SelectGroupTwo
                 selectedOption={selectedOption.fuel_type}
                 setSelectedOption={(e) =>
-                  setSelectedOption({ ...selectedOption, fuel_type: e?.value })
+                  setSelectedOption({ ...selectedOption, fuel_type: e })
                 }
                 heading="Fuel Type "
                 spanText="Add Fuel Type"
@@ -927,7 +927,7 @@ export default function Page() {
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
-                    transmission: e?.value,
+                    transmission: e,
                   })
                 }
                 heading="Transmission "
@@ -937,7 +937,7 @@ export default function Page() {
               <SelectGroupTwo
                 selectedOption={selectedOption.color}
                 setSelectedOption={(e) =>
-                  setSelectedOption({ ...selectedOption, color: e?.value })
+                  setSelectedOption({ ...selectedOption, color: e })
                 }
                 heading="Color "
                 spanText="Add Color"
@@ -966,7 +966,7 @@ export default function Page() {
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
-                    mileage_range: e?.value,
+                    mileage_range: e,
                   })
                 }
                 heading="Mileage Range "
@@ -994,7 +994,7 @@ export default function Page() {
               <SelectGroupTwo
                 selectedOption={selectedOption.body_type}
                 setSelectedOption={(e) =>
-                  setSelectedOption({ ...selectedOption, body_type: e?.value })
+                  setSelectedOption({ ...selectedOption, body_type: e })
                 }
                 heading="Body Type "
                 spanText="Add Body Type"
@@ -1003,7 +1003,7 @@ export default function Page() {
               <SelectGroupTwo
                 selectedOption={selectedOption.door}
                 setSelectedOption={(e) =>
-                  setSelectedOption({ ...selectedOption, door: e?.value })
+                  setSelectedOption({ ...selectedOption, door: e })
                 }
                 heading="Doors "
                 spanText="Add Doors"
@@ -1012,7 +1012,7 @@ export default function Page() {
               <SelectGroupTwo
                 selectedOption={selectedOption.steering}
                 setSelectedOption={(e) =>
-                  setSelectedOption({ ...selectedOption, steering: e?.value })
+                  setSelectedOption({ ...selectedOption, steering: e })
                 }
                 heading="Steering"
                 spanText="Add Steering"

@@ -593,7 +593,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.placement}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, placement: e?.value })
+                setSelectedOption({ ...selectedOption, placement: e })
               }
               heading="Car Placement"
               options={placements}
@@ -601,7 +601,7 @@ const Page = () => {
             {/* <SelectGroupTwo
               selectedOption={selectedOption.car}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, car: e?.value })
+                setSelectedOption({ ...selectedOption, car: e })
               }
               heading="Select a Car"
               options={[
@@ -613,7 +613,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.sold}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, sold: e?.value })
+                setSelectedOption({ ...selectedOption, sold: e })
               }
               heading="Sold"
               options={[
@@ -624,7 +624,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.reserved}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, reserved: e?.value })
+                setSelectedOption({ ...selectedOption, reserved: e })
               }
               heading="Reserved"
               options={[
@@ -653,7 +653,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.machinery_type}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, machinery_type: e?.value })
+                setSelectedOption({ ...selectedOption, machinery_type: e })
               }
               heading="Machinery Type "
               spanText="Add Machinery Type"
@@ -662,7 +662,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.price_range}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, price_range: e?.value })
+                setSelectedOption({ ...selectedOption, price_range: e })
               }
               heading="Car Price Range "
               spanText="Add Car Price Range"
@@ -689,7 +689,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.make}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, make: e?.value })
+                setSelectedOption({ ...selectedOption, make: e })
               }
               heading="Car Make "
               spanText="Add Car Make"
@@ -698,7 +698,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.car_model}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, car_model: e?.value })
+                setSelectedOption({ ...selectedOption, car_model: e })
               }
               heading="Car Model "
               spanText="Add Car Model"
@@ -707,7 +707,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.vehicle_type}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, vehicle_type: e?.value })
+                setSelectedOption({ ...selectedOption, vehicle_type: e })
               }
               heading="Vehicle Type "
               spanText="Add Vehicle Type"
@@ -716,7 +716,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.month}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, month: e?.value })
+                setSelectedOption({ ...selectedOption, month: e })
               }
               heading="Month "
               spanText="Add Month"
@@ -725,7 +725,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.year}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, year: e?.value })
+                setSelectedOption({ ...selectedOption, year: e })
               }
               heading="Year "
               spanText="Add Year"
@@ -752,7 +752,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.drive_type}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, drive_type: e?.value })
+                setSelectedOption({ ...selectedOption, drive_type: e })
               }
               heading="Drive Type "
               spanText="Add Drive Type"
@@ -761,7 +761,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.fuel_type}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, fuel_type: e?.value })
+                setSelectedOption({ ...selectedOption, fuel_type: e })
               }
               heading="Fuel Type "
               spanText="Add Fuel Type"
@@ -770,7 +770,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.transmission}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, transmission: e?.value })
+                setSelectedOption({ ...selectedOption, transmission: e })
               }
               heading="Transmission "
               spanText="Add Transmission"
@@ -779,7 +779,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.color}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, color: e?.value })
+                setSelectedOption({ ...selectedOption, color: e })
               }
               heading="Color "
               spanText="Add Color"
@@ -806,7 +806,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.mileage_range}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, mileage_range: e?.value })
+                setSelectedOption({ ...selectedOption, mileage_range: e })
               }
               heading="Mileage Range "
               spanText="Add Mileage Range"
@@ -833,7 +833,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.body_type}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, body_type: e?.value })
+                setSelectedOption({ ...selectedOption, body_type: e })
               }
               heading="Body Type "
               spanText="Add Body Type"
@@ -842,7 +842,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.door}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, door: e?.value })
+                setSelectedOption({ ...selectedOption, door: e })
               }
               heading="Doors "
               spanText="Add Doors"
@@ -851,7 +851,7 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.steering}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, steering: e?.value })
+                setSelectedOption({ ...selectedOption, steering: e })
               }
               heading="Steering"
               spanText="Add Steering"
