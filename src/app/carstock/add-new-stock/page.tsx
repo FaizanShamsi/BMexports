@@ -18,10 +18,10 @@ const Page = () => {
   const [imagegallery, setImageGallery] = useState<any>([]);
   const [selectedOption, setSelectedOption] = useState<any>({});
   const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState<any>("");
   const [chassis, setChassis] = useState("");
   const [engine, setEngine] = useState("");
-  const [mileage, setMileage] = useState("");
+  const [mileage, setMileage] = useState<any>("");
   const [seating, setSeating] = useState("");
   const [capacity, setCapacity] = useState("");
   const [placements, setPlacement] = useState([]);
@@ -613,23 +613,23 @@ const Page = () => {
             <SelectGroupTwo
               selectedOption={selectedOption.sold}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, sold: e })
+                setSelectedOption({ ...selectedOption, sold: Number(e) })
               }
               heading="Sold"
               options={[
-                { value: "yes", label: "Yes" },
-                { value: "no", label: "No" },
+                { value: "1", label: "Yes" },
+                { value: "0", label: "No" },
               ]}
             />
             <SelectGroupTwo
               selectedOption={selectedOption.reserved}
               setSelectedOption={(e) =>
-                setSelectedOption({ ...selectedOption, reserved: e })
+                setSelectedOption({ ...selectedOption, reserved: Number(e) })
               }
               heading="Reserved"
               options={[
-                { value: "yes", label: "Yes" },
-                { value: "no", label: "No" },
+                { value: "1", label: "Yes" },
+                { value: "0", label: "No" },
               ]}
             />
             <div>
@@ -677,13 +677,13 @@ const Page = () => {
               </label>
               <input
                 onChange={(e) => {
-                  setPrice(e.target.value);
+                  setPrice(Number(e.target.value));
                   setSelectedOption({
                     ...selectedOption,
-                    car_price: e.target.value,
+                    car_price: Number(e.target.value),
                   });
                 }}
-                type="text"
+                type="number"
                 placeholder="Enter Car Price"
                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                 value={selectedOption.car_price}
@@ -830,13 +830,13 @@ const Page = () => {
               </label>
               <input
                 onChange={(e) => {
-                  setMileage(e.target.value);
+                  setMileage(Number(e.target.value));
                   setSelectedOption({
                     ...selectedOption,
-                    mileage: e.target.value,
+                    mileage: Number(e.target.value),
                   });
                 }}
-                type="text"
+                type="number"
                 placeholder="Enter Mileage "
                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent px-5 py-3 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                 value={selectedOption.mileage}
