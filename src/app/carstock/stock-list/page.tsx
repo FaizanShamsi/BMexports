@@ -722,7 +722,11 @@ export default function Page() {
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:w-full md:w-203">
             <div className="flex flex-col gap-5.5 p-6.5">
               <SelectGroupTwo
-                selectedOption={selectedOption.placement}
+                selectedOption={
+                  placements.find(
+                    (x: any) => x.label == selectedOption.placement,
+                  )?.value
+                }
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, placement: Number(e) })
                 }
@@ -782,7 +786,11 @@ export default function Page() {
                 />
               </div>
               <SelectGroupTwo
-                selectedOption={selectedOption.machinery_type}
+                selectedOption={
+                  machineries.find(
+                    (x: any) => x.label == selectedOption.machinery_type,
+                  )?.value
+                }
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
@@ -794,7 +802,11 @@ export default function Page() {
                 options={machineries}
               />
               <SelectGroupTwo
-                selectedOption={selectedOption.price_range}
+                selectedOption={
+                  priceRanges.find(
+                    (x: any) => x.label == selectedOption.price_range,
+                  )?.value
+                }
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
@@ -824,7 +836,7 @@ export default function Page() {
                 />
               </div>
               <SelectGroupTwo
-                selectedOption={selectedOption.make}
+                selectedOption={makes.find((x: any) => x.label == selectedOption.make)?.value}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, make: Number(e) })
                 }
@@ -833,7 +845,7 @@ export default function Page() {
                 options={makes}
               />
               <SelectGroupTwo
-                selectedOption={selectedOption.car_model}
+                selectedOption={models.find((x: any) => x.label == selectedOption.car_model)?.value}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, car_model: Number(e) })
                 }
@@ -842,7 +854,7 @@ export default function Page() {
                 options={models}
               />
               <SelectGroupTwo
-                selectedOption={selectedOption.vehicle_type}
+                selectedOption={vehicleTypes.find((x: any) => x.label == selectedOption.vehicle_type)?.value}
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
@@ -854,7 +866,7 @@ export default function Page() {
                 options={vehicleTypes}
               />
               <SelectGroupTwo
-                selectedOption={selectedOption.month}
+                selectedOption={months.find((x: any) => x.label == selectedOption.month)?.value}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, month: Number(e) })
                 }
@@ -863,7 +875,7 @@ export default function Page() {
                 options={months}
               />
               <SelectGroupTwo
-                selectedOption={selectedOption.year}
+                selectedOption={years.find((x: any) => x.label == selectedOption.year)?.value}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, year: Number(e) })
                 }
@@ -890,7 +902,7 @@ export default function Page() {
                 />
               </div>
               <SelectGroupTwo
-                selectedOption={selectedOption.drive_type}
+                selectedOption={driverTypes.find((x: any) => x.label == selectedOption.drive_type)?.value}
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
@@ -902,7 +914,7 @@ export default function Page() {
                 options={driverTypes}
               />
               <SelectGroupTwo
-                selectedOption={selectedOption.fuel_type}
+                selectedOption={fuelType.find((x: any) => x.label == selectedOption.fuel_type)?.value}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, fuel_type: Number(e) })
                 }
@@ -911,7 +923,7 @@ export default function Page() {
                 options={fuelType}
               />
               <SelectGroupTwo
-                selectedOption={selectedOption.transmission}
+                selectedOption={transmission.find((x: any) => x.label == selectedOption.transmission)?.value}
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
@@ -923,7 +935,7 @@ export default function Page() {
                 options={transmission}
               />
               <SelectGroupTwo
-                selectedOption={selectedOption.color}
+                selectedOption={colors.find((x: any) => x.label == selectedOption.color)?.value}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, color: Number(e) })
                 }
@@ -950,7 +962,7 @@ export default function Page() {
                 />
               </div>
               <SelectGroupTwo
-                selectedOption={selectedOption.mileage_range}
+                selectedOption={mileageRange.find((x: any) => x.label == selectedOption.mileage_range)?.value}
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
@@ -980,7 +992,7 @@ export default function Page() {
                 />
               </div>
               <SelectGroupTwo
-                selectedOption={selectedOption.body_type}
+                selectedOption={bodyTypes.find((x: any) => x.label == selectedOption.body_type)?.value}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, body_type: Number(e) })
                 }
@@ -989,7 +1001,7 @@ export default function Page() {
                 options={bodyTypes}
               />
               <SelectGroupTwo
-                selectedOption={selectedOption.door}
+                selectedOption={doors.find((x: any) => x.label == selectedOption.door)?.value}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, door: Number(e) })
                 }
@@ -998,7 +1010,7 @@ export default function Page() {
                 options={doors}
               />
               <SelectGroupTwo
-                selectedOption={selectedOption.steering}
+                selectedOption={steering.find((x: any) => x.label == selectedOption.steering)?.value}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, steering: Number(e) })
                 }
