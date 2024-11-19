@@ -615,7 +615,7 @@ export default function Page() {
     }
   };
 
-  const checkOption = (id) => {
+  const checkOption = (id: any) => {
     var duplicate_options = [...options];
     duplicate_options.find(x => x.value === id).checked = !duplicate_options.find(x => x.value === id).checked
     setOptions(duplicate_options)

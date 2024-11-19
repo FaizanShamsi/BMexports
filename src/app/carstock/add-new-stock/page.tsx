@@ -74,29 +74,27 @@ const Page = () => {
       ref_no: "",
       grade: "",
       condition: "",
-      options: options,
+      options: checked_options.map((x: any) => x.value),
       stock_description: content,
     };
 
-    console.log(checked_options.map((x: any) => x.value), "options");
-
-    // try {
-    //   const response = await fetch(
-    //     "https://bmexportsbackend.creatixtech.com/api/add-new-stock",
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify(stockData),
-    //     },
-    //   );
-    //   if (response.ok) {
-    //     toast.success("new stock been added");
-    //   }
-    // } catch (err: any) {
-    //   console.log(err);
-    // }
+    try {
+      const response = await fetch(
+        "https://bmexportsbackend.creatixtech.com/api/add-new-stock",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(stockData),
+        },
+      );
+      if (response.ok) {
+        toast.success("new stock been added");
+      }
+    } catch (err: any) {
+      console.log(err);
+    }
   };
 
   const fetchPlacements = async () => {
@@ -546,7 +544,7 @@ const Page = () => {
     }
   };
 
-  const checkOption = (id) => {
+  const checkOption = (id: any) => {
     var duplicate_options = [...options];
     duplicate_options.find(x => x.value === id).checked = !duplicate_options.find(x => x.value === id).checked
     setOptions(duplicate_options)
