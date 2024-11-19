@@ -40,7 +40,7 @@ const Page = () => {
   const [bodyTypes, setBodyType] = useState([]);
   const [doors, setDoors] = useState([]);
   const [steering, setSteering] = useState([]);
-  const [options, setOptions] = useState([]);
+  const [options, setOptions] = useState<any>([]);
 
   const imageToBase64 = (file: any) => {
     var reader = new FileReader();
@@ -66,6 +66,7 @@ const Page = () => {
 
   const fetchStock = async () => {
     console.log(selectedOption, "selectedOption");
+    const checked_options = options.filter((x: any) => x.checked);
     const stockData = {
       ...selectedOption,
       featured_image: image,
@@ -77,27 +78,25 @@ const Page = () => {
       stock_description: content,
     };
 
-    console.log(options, "options");
+    console.log(checked_options.map((x: any) => x.value), "options");
 
-    console.log(stockData);
-
-    try {
-      const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/add-new-stock",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(stockData),
-        },
-      );
-      if (response.ok) {
-        toast.success("new stock been added");
-      }
-    } catch (err: any) {
-      console.log(err);
-    }
+    // try {
+    //   const response = await fetch(
+    //     "https://bmexportsbackend.creatixtech.com/api/add-new-stock",
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify(stockData),
+    //     },
+    //   );
+    //   if (response.ok) {
+    //     toast.success("new stock been added");
+    //   }
+    // } catch (err: any) {
+    //   console.log(err);
+    // }
   };
 
   const fetchPlacements = async () => {
@@ -537,9 +536,8 @@ const Page = () => {
         processedData.push({
           name: item.option,
           label: item.option,
-          checked: isChecked,
-          onChange: (checked: boolean | ((prevState: boolean) => boolean)) =>
-            setIsChecked(checked),
+          value: item.id,
+          checked: false,
         });
       });
       setOptions(processedData);
@@ -547,6 +545,12 @@ const Page = () => {
       console.log(err, "err");
     }
   };
+
+  const checkOption = (id) => {
+    var duplicate_options = [...options];
+    duplicate_options.find(x => x.value === id).checked = !duplicate_options.find(x => x.value === id).checked
+    setOptions(duplicate_options)
+  }
 
   const checkboxes = [
     {
@@ -914,7 +918,7 @@ const Page = () => {
                 name={checkbox.name}
                 label={checkbox.label}
                 checked={checkbox.checked}
-                onChange={checkbox.onChange}
+                onChange={() => checkOption(checkbox.value)}
               />
             ))}
             <div>

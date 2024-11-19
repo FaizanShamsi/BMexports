@@ -105,6 +105,7 @@ export default function Page() {
   ];
 
   const handleEdit = async () => {
+    const checked_options = options.filter((x: any) => x.checked);
     const stockData = {
       ...selectedOption,
       featured_image: image,
@@ -112,7 +113,7 @@ export default function Page() {
       ref_no: "",
       grade: "",
       condition: "",
-      options: options,
+      options: checked_options.map((x: any) => x.value),
       stock_description: content,
     };
 
@@ -604,9 +605,8 @@ export default function Page() {
         processedData.push({
           name: item.option,
           label: item.option,
+          value: item.id,
           checked: isChecked,
-          onChange: (checked: boolean | ((prevState: boolean) => boolean)) =>
-            setIsChecked(checked),
         });
       });
       setOptions(processedData);
@@ -614,6 +614,12 @@ export default function Page() {
       console.log(err, "err");
     }
   };
+
+  const checkOption = (id) => {
+    var duplicate_options = [...options];
+    duplicate_options.find(x => x.value === id).checked = !duplicate_options.find(x => x.value === id).checked
+    setOptions(duplicate_options)
+  }
 
   useEffect(() => {
     fetchPlacements();
@@ -1063,7 +1069,7 @@ export default function Page() {
                   name={checkbox.name}
                   label={checkbox.label}
                   checked={checkbox.checked}
-                  onChange={checkbox.onChange}
+                  onChange={() => checkOption(checkbox.value)}
                 />
               ))}
               <div>
