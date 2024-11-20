@@ -617,9 +617,10 @@ export default function Page() {
 
   const checkOption = (id: any) => {
     var duplicate_options = [...options];
-    duplicate_options.find(x => x.value === id).checked = !duplicate_options.find(x => x.value === id).checked
-    setOptions(duplicate_options)
-  }
+    duplicate_options.find((x) => x.value === id).checked =
+      !duplicate_options.find((x) => x.value === id).checked;
+    setOptions(duplicate_options);
+  };
 
   useEffect(() => {
     fetchPlacements();
@@ -689,8 +690,66 @@ export default function Page() {
                 setMileage(product.mileage);
                 setSeating(product.seating);
                 setCapacity(product.loading_capacity);
-                setSelectedOption(product);
-                setImageGallery(product.image_gallery?.split(","));
+                setSelectedOption({
+                  car_title: product.car_title,
+                  machinery_type: machineries.find(
+                    (x: any) => x.label == product.machinery_type,
+                  )?.value,
+                  price_range: priceRanges.find(
+                    (x: any) => x.label == product.price_range,
+                  )?.value,
+                  car_price: product.car_price,
+                  ref_no: product.ref_no,
+                  make: makes.find((x: any) => x.label == product.make)?.value,
+                  car_model: models.find(
+                    (x: any) => x.label == product.car_model,
+                  )?.value,
+                  vehicle_type: vehicleTypes.find(
+                    (x: any) => x.label == product.vehicle_type,
+                  )?.value,
+                  month: months.find((x: any) => x.label == product.month)
+                    ?.value,
+                  year: years.find((x: any) => x.label == product.year)?.value,
+                  chassis_no: product.chassis_no,
+                  drive_type: driverTypes.find(
+                    (x: any) => x.label == product.drive_type,
+                  )?.value,
+                  fuel_type: fuelType.find(
+                    (x: any) => x.label == product.fuel_type,
+                  )?.value,
+                  transmission: transmission.find(
+                    (x: any) => x.label == product.transmission,
+                  )?.value,
+                  color: colors.find((x: any) => x.label == product.color)
+                    ?.value,
+                  engine: product.engine,
+                  mileage_range: mileageRange.find(
+                    (x: any) => x.label == product.mileage_range,
+                  )?.value,
+                  mileage: product.mileage,
+                  body_type: bodyTypes.find(
+                    (x: any) => x.label == product.body_type,
+                  )?.value,
+                  door: doors.find((x: any) => x.label == product.door)?.value,
+                  steering: steering.find(
+                    (x: any) => x.label == product.steering,
+                  )?.value,
+                  seating: product.seating,
+                  grade: "",
+                  condition: "",
+                  placement: placements.find(
+                    (x: any) => x.label == product.placement,
+                  )?.value,
+                  loading_capacity: product.loading_capacity,
+                  sold: Number(product.sold),
+                  reserved: Number(product.reserved),
+                });
+                const product_images = product.image_gallery
+                  ?.split(",")
+                  .map((x: any) => ({ src: x }));
+                setImageGallery(() => [...product_images]);
+                console.log(product_images, "product_images");
+                console.log(imagegallery, "imagegallery");
                 setImage(product.featured_image);
                 setContent(product.content);
                 const duplicate_options = [...options];
@@ -728,11 +787,7 @@ export default function Page() {
           <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:w-full md:w-203">
             <div className="flex flex-col gap-5.5 p-6.5">
               <SelectGroupTwo
-                selectedOption={
-                  placements.find(
-                    (x: any) => x.label == selectedOption.placement,
-                  )?.value
-                }
+                selectedOption={selectedOption.placement}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, placement: Number(e) })
                 }
@@ -792,11 +847,7 @@ export default function Page() {
                 />
               </div>
               <SelectGroupTwo
-                selectedOption={
-                  machineries.find(
-                    (x: any) => x.label == selectedOption.machinery_type,
-                  )?.value
-                }
+                selectedOption={selectedOption.machinery_type}
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
@@ -808,11 +859,7 @@ export default function Page() {
                 options={machineries}
               />
               <SelectGroupTwo
-                selectedOption={
-                  priceRanges.find(
-                    (x: any) => x.label == selectedOption.price_range,
-                  )?.value
-                }
+                selectedOption={selectedOption.price_range}
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
@@ -842,7 +889,7 @@ export default function Page() {
                 />
               </div>
               <SelectGroupTwo
-                selectedOption={makes.find((x: any) => x.label == selectedOption.make)?.value}
+                selectedOption={selectedOption.make}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, make: Number(e) })
                 }
@@ -851,7 +898,7 @@ export default function Page() {
                 options={makes}
               />
               <SelectGroupTwo
-                selectedOption={models.find((x: any) => x.label == selectedOption.car_model)?.value}
+                selectedOption={selectedOption.car_model}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, car_model: Number(e) })
                 }
@@ -860,7 +907,7 @@ export default function Page() {
                 options={models}
               />
               <SelectGroupTwo
-                selectedOption={vehicleTypes.find((x: any) => x.label == selectedOption.vehicle_type)?.value}
+                selectedOption={selectedOption.vehicle_type}
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
@@ -872,7 +919,7 @@ export default function Page() {
                 options={vehicleTypes}
               />
               <SelectGroupTwo
-                selectedOption={months.find((x: any) => x.label == selectedOption.month)?.value}
+                selectedOption={selectedOption.month}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, month: Number(e) })
                 }
@@ -881,7 +928,7 @@ export default function Page() {
                 options={months}
               />
               <SelectGroupTwo
-                selectedOption={years.find((x: any) => x.label == selectedOption.year)?.value}
+                selectedOption={selectedOption.year}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, year: Number(e) })
                 }
@@ -908,7 +955,7 @@ export default function Page() {
                 />
               </div>
               <SelectGroupTwo
-                selectedOption={driverTypes.find((x: any) => x.label == selectedOption.drive_type)?.value}
+                selectedOption={selectedOption.drive_type}
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
@@ -920,7 +967,7 @@ export default function Page() {
                 options={driverTypes}
               />
               <SelectGroupTwo
-                selectedOption={fuelType.find((x: any) => x.label == selectedOption.fuel_type)?.value}
+                selectedOption={selectedOption.fuel_type}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, fuel_type: Number(e) })
                 }
@@ -929,7 +976,7 @@ export default function Page() {
                 options={fuelType}
               />
               <SelectGroupTwo
-                selectedOption={transmission.find((x: any) => x.label == selectedOption.transmission)?.value}
+                selectedOption={selectedOption.transmission}
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
@@ -941,7 +988,7 @@ export default function Page() {
                 options={transmission}
               />
               <SelectGroupTwo
-                selectedOption={colors.find((x: any) => x.label == selectedOption.color)?.value}
+                selectedOption={selectedOption.color}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, color: Number(e) })
                 }
@@ -968,7 +1015,7 @@ export default function Page() {
                 />
               </div>
               <SelectGroupTwo
-                selectedOption={mileageRange.find((x: any) => x.label == selectedOption.mileage_range)?.value}
+                selectedOption={selectedOption.mileage_range}
                 setSelectedOption={(e) =>
                   setSelectedOption({
                     ...selectedOption,
@@ -998,7 +1045,7 @@ export default function Page() {
                 />
               </div>
               <SelectGroupTwo
-                selectedOption={bodyTypes.find((x: any) => x.label == selectedOption.body_type)?.value}
+                selectedOption={selectedOption.body_type}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, body_type: Number(e) })
                 }
@@ -1007,7 +1054,7 @@ export default function Page() {
                 options={bodyTypes}
               />
               <SelectGroupTwo
-                selectedOption={doors.find((x: any) => x.label == selectedOption.door)?.value}
+                selectedOption={selectedOption.door}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, door: Number(e) })
                 }
@@ -1016,7 +1063,7 @@ export default function Page() {
                 options={doors}
               />
               <SelectGroupTwo
-                selectedOption={steering.find((x: any) => x.label == selectedOption.steering)?.value}
+                selectedOption={selectedOption.steering}
                 setSelectedOption={(e) =>
                   setSelectedOption({ ...selectedOption, steering: Number(e) })
                 }
