@@ -6,6 +6,9 @@ import SelectGroupTwo from "@/components/SelectGroup/SelectGroupTwo";
 import CheckboxTwo from "@/components/Checkboxes/CheckboxTwo";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
+import { Delete } from "@mui/icons-material";
+import { Box } from "@mui/material";
 
 // Dynamically import JoditEditor with ssr: false
 const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
@@ -42,6 +45,8 @@ const Page = () => {
   const [steering, setSteering] = useState([]);
   const [options, setOptions] = useState<any>([]);
 
+  const router = useRouter();
+
   const imageToBase64 = (file: any) => {
     var reader = new FileReader();
     reader.readAsDataURL(file);
@@ -64,6 +69,12 @@ const Page = () => {
     };
   };
 
+  const handleDeleteImage = (index: any) => {
+    const imageGalleryClone = [...imagegallery];
+    imageGalleryClone.splice(index, 1);
+    setImageGallery(imageGalleryClone);
+  };
+
   const fetchStock = async () => {
     console.log(selectedOption, "selectedOption");
     const checked_options = options.filter((x: any) => x.checked);
@@ -80,7 +91,7 @@ const Page = () => {
 
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/add-new-stock",
+        "https://backend.bmglobalexports.com/api/add-new-stock",
         {
           method: "POST",
           headers: {
@@ -91,6 +102,7 @@ const Page = () => {
       );
       if (response.ok) {
         toast.success("new stock been added");
+        router.push("/stock-list");
       }
     } catch (err: any) {
       console.log(err);
@@ -100,7 +112,7 @@ const Page = () => {
   const fetchPlacements = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-placements",
+        "https://backend.bmglobalexports.com/api/all-placements",
         {
           method: "GET",
           headers: {
@@ -126,7 +138,7 @@ const Page = () => {
   const fetchMachinery = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-machinery-types",
+        "https://backend.bmglobalexports.com/api/all-machinery-types",
         {
           method: "GET",
           headers: {
@@ -152,7 +164,7 @@ const Page = () => {
   const fetchPriceRagnges = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-prs",
+        "https://backend.bmglobalexports.com/api/all-prs",
         {
           method: "GET",
           headers: {
@@ -178,7 +190,7 @@ const Page = () => {
   const fetchMakes = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-makes",
+        "https://backend.bmglobalexports.com/api/all-makes",
         {
           method: "GET",
           headers: {
@@ -204,7 +216,7 @@ const Page = () => {
   const fetchModels = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-models",
+        "https://backend.bmglobalexports.com/api/all-models",
         {
           method: "GET",
           headers: {
@@ -230,7 +242,7 @@ const Page = () => {
   const fetchVehicleTypes = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-types",
+        "https://backend.bmglobalexports.com/api/all-types",
         {
           method: "GET",
           headers: {
@@ -256,7 +268,7 @@ const Page = () => {
   const fetchMonths = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-months",
+        "https://backend.bmglobalexports.com/api/all-months",
         {
           method: "GET",
           headers: {
@@ -282,7 +294,7 @@ const Page = () => {
   const fetchYears = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-years",
+        "https://backend.bmglobalexports.com/api/all-years",
         {
           method: "GET",
           headers: {
@@ -308,7 +320,7 @@ const Page = () => {
   const fetchDriverTypes = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-dts",
+        "https://backend.bmglobalexports.com/api/all-dts",
         {
           method: "GET",
           headers: {
@@ -334,7 +346,7 @@ const Page = () => {
   const fetchFuelTypes = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-fts",
+        "https://backend.bmglobalexports.com/api/all-fts",
         {
           method: "GET",
           headers: {
@@ -360,7 +372,7 @@ const Page = () => {
   const fetchTrasmissions = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-transmissions",
+        "https://backend.bmglobalexports.com/api/all-transmissions",
         {
           method: "GET",
           headers: {
@@ -386,7 +398,7 @@ const Page = () => {
   const fetchColors = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-colors",
+        "https://backend.bmglobalexports.com/api/all-colors",
         {
           method: "GET",
           headers: {
@@ -412,7 +424,7 @@ const Page = () => {
   const fetchMileage = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-mrs",
+        "https://backend.bmglobalexports.com/api/all-mrs",
         {
           method: "GET",
           headers: {
@@ -438,7 +450,7 @@ const Page = () => {
   const fetchBodyType = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-bts",
+        "https://backend.bmglobalexports.com/api/all-bts",
         {
           method: "GET",
           headers: {
@@ -464,7 +476,7 @@ const Page = () => {
   const fetchDoors = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-doors",
+        "https://backend.bmglobalexports.com/api/all-doors",
         {
           method: "GET",
           headers: {
@@ -490,7 +502,7 @@ const Page = () => {
   const fetchSteering = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-steerings",
+        "https://backend.bmglobalexports.com/api/all-steerings",
         {
           method: "GET",
           headers: {
@@ -516,7 +528,7 @@ const Page = () => {
   const fetchOptions = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-options",
+        "https://backend.bmglobalexports.com/api/all-options",
         {
           method: "GET",
           headers: {
@@ -546,9 +558,10 @@ const Page = () => {
 
   const checkOption = (id: any) => {
     var duplicate_options = [...options];
-    duplicate_options.find(x => x.value === id).checked = !duplicate_options.find(x => x.value === id).checked
-    setOptions(duplicate_options)
-  }
+    duplicate_options.find((x) => x.value === id).checked =
+      !duplicate_options.find((x) => x.value === id).checked;
+    setOptions(duplicate_options);
+  };
 
   const checkboxes = [
     {
@@ -951,12 +964,42 @@ const Page = () => {
                   {imagegallery.length > 0 ? (
                     <div className="flex flex-wrap items-center justify-center">
                       {imagegallery.map((image: any, index: any) => (
-                        <img
-                          src={image?.src}
-                          key={index}
-                          width="100px"
-                          height="100px"
-                        />
+                        <Box
+                          sx={{
+                            position: "relative",
+                            "&:hover .deleteBox": {
+                              opacity: 1,
+                            },
+                          }}
+                        >
+                          <img
+                            src={image?.src}
+                            key={index}
+                            width="100px"
+                            height="100px"
+                          />
+                          <Box
+                            sx={{
+                              position: "absolute",
+                              width: "100%",
+                              height: "100%",
+                              backgroundColor: "rgba(0,0,0,0.7)",
+                              top: 0,
+                              left: 0,
+                              display: "grid",
+                              placeItems: "center",
+                              opacity: 0,
+                            }}
+                            className="deleteBox"
+                          >
+                            <button
+                              onClick={() => handleDeleteImage(index)}
+                              className="rounded p-1 font-bold"
+                            >
+                              <Delete />
+                            </button>
+                          </Box>
+                        </Box>
                       ))}
                     </div>
                   ) : (

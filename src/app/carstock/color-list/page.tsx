@@ -21,7 +21,7 @@ export default function Page() {
   const fetchColors = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-colors",
+        "https://backend.bmglobalexports.com/api/all-colors",
         {
           method: "GET",
           headers: {
@@ -58,7 +58,7 @@ export default function Page() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/update-color/${editId}`,
+        `https://backend.bmglobalexports.com/api/update-color/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -87,7 +87,7 @@ export default function Page() {
 
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/delete-color/${id}`,
+        `https://backend.bmglobalexports.com/api/delete-color/${id}`,
         {
           method: "DELETE",
         },

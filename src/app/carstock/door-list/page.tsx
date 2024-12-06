@@ -21,7 +21,7 @@ export default function Page() {
   const fetchDoor = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-doors",
+        "https://backend.bmglobalexports.com/api/all-doors",
         {
           method: "GET",
           headers: {
@@ -58,7 +58,7 @@ export default function Page() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/update-door/${editId}`,
+        `https://backend.bmglobalexports.com/api/update-door/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -87,7 +87,7 @@ export default function Page() {
 
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/delete-door/${id}`,
+        `https://backend.bmglobalexports.com/api/delete-door/${id}`,
         {
           method: "DELETE",
         },

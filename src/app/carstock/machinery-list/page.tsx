@@ -33,7 +33,7 @@ export default function Page() {
   const fetchMachinery = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-machinery-types",
+        "https://backend.bmglobalexports.com/api/all-machinery-types",
         {
           method: "GET",
           headers: {
@@ -75,7 +75,7 @@ export default function Page() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/update-machinery-type/${editId}`,
+        `https://backend.bmglobalexports.com/api/update-machinery-type/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -105,7 +105,7 @@ export default function Page() {
 
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/delete-machinery-type/${id}`,
+        `https://backend.bmglobalexports.com/api/delete-machinery-type/${id}`,
         {
           method: "DELETE",
         },

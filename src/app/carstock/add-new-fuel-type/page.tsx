@@ -11,7 +11,7 @@ const Page = () => {
   const fetchFuelType = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/add-car-ft",
+        "https://backend.bmglobalexports.com/api/add-car-ft",
         {
           method: "POST",
           headers: {

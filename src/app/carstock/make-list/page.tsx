@@ -23,7 +23,7 @@ export default function Page() {
   const fetchMakes = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-makes",
+        "https://backend.bmglobalexports.com/api/all-makes",
         {
           method: "GET",
           headers: {
@@ -66,7 +66,7 @@ export default function Page() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/update-make/${editId}`,
+        `https://backend.bmglobalexports.com/api/update-make/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -96,7 +96,7 @@ export default function Page() {
 
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/delete-make/${id}`,
+        `https://backend.bmglobalexports.com/api/delete-make/${id}`,
         {
           method: "DELETE",
         },

@@ -23,7 +23,7 @@ export default function Page() {
   const fetchModals = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-models",
+        "https://backend.bmglobalexports.com/api/all-models",
       );
       if (!response.ok) {
         throw new Error("Failed to fetch products");
@@ -65,7 +65,7 @@ export default function Page() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/update-model/${editId}`,
+        `https://backend.bmglobalexports.com/api/update-model/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -96,7 +96,7 @@ export default function Page() {
 
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/delete-model/${id}`,
+        `https://backend.bmglobalexports.com/api/delete-model/${id}`,
         {
           method: "DELETE",
         },

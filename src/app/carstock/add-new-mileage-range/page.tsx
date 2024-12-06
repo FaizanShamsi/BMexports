@@ -11,7 +11,7 @@ const Page = () => {
   const fetchMileageRange = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/add-car-mr",
+        "https://backend.bmglobalexports.com/api/add-car-mr",
         {
           method: "POST",
           headers: {

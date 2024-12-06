@@ -11,7 +11,7 @@ const Page = () => {
   const fetchYear = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/add-car-year",
+        "https://backend.bmglobalexports.com/api/add-car-year",
         {
           method: "POST",
           headers: {

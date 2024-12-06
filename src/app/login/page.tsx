@@ -19,7 +19,7 @@ const Login = () => {
 
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/user/login",
+        "https://backend.bmglobalexports.com/api/user/login",
         {
           method: "POST",
           headers: {

@@ -27,7 +27,7 @@ export default function Page() {
   const fetchMonths = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-months",
+        "https://backend.bmglobalexports.com/api/all-months",
         {
           method: "GET",
           headers: {
@@ -58,7 +58,7 @@ export default function Page() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/update-month/${editId}`,
+        `https://backend.bmglobalexports.com/api/update-month/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -87,7 +87,7 @@ export default function Page() {
 
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/delete-month/${id}`,
+        `https://backend.bmglobalexports.com/api/delete-month/${id}`,
         {
           method: "DELETE",
         },

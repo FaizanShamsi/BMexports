@@ -11,7 +11,7 @@ const Page = () => {
   const fetchDriveType = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/add-car-dt",
+        "https://backend.bmglobalexports.com/api/add-car-dt",
         {
           method: "POST",
           headers: {

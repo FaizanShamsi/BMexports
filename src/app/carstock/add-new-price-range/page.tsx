@@ -11,7 +11,7 @@ const Page = () => {
   const fetchPriceRange = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/add-car-pr",
+        "https://backend.bmglobalexports.com/api/add-car-pr",
         {
           method: "POST",
           headers: {

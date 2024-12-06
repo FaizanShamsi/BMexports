@@ -21,7 +21,7 @@ export default function Page() {
   const fetchFuel = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/all-fts",
+        "https://backend.bmglobalexports.com/api/all-fts",
         {
           method: "GET",
           headers: {
@@ -59,7 +59,7 @@ export default function Page() {
   const handleEdit = async () => {
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/update-ft/${editId}`,
+        `https://backend.bmglobalexports.com/api/update-ft/${editId}`,
         {
           method: "PUT",
           headers: {
@@ -88,7 +88,7 @@ export default function Page() {
 
     try {
       const response = await fetch(
-        `https://bmexportsbackend.creatixtech.com/api/delete-ft/${id}`,
+        `https://backend.bmglobalexports.com/api/delete-ft/${id}`,
         {
           method: "DELETE",
         },

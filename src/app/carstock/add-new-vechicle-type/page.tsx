@@ -23,7 +23,7 @@ export default function Page() {
   const fetchCarType = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/add-car-type",
+        "https://backend.bmglobalexports.com/api/add-car-type",
         {
           method: "POST",
           headers: {

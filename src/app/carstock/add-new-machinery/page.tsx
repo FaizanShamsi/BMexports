@@ -24,7 +24,7 @@ export default function Page() {
   const fetchMachinery = async () => {
     try {
       const response = await fetch(
-        "https://bmexportsbackend.creatixtech.com/api/add-machinery-type",
+        "https://backend.bmglobalexports.com/api/add-machinery-type",
         {
           method: "POST",
           headers: {
