@@ -965,6 +965,7 @@ const Page = () => {
                     <div className="flex flex-wrap items-center justify-center">
                       {imagegallery.map((image: any, index: any) => (
                         <Box
+                          key={index}
                           sx={{
                             position: "relative",
                             "&:hover .deleteBox": {
@@ -972,12 +973,7 @@ const Page = () => {
                             },
                           }}
                         >
-                          <img
-                            src={image?.src}
-                            key={index}
-                            width="100px"
-                            height="100px"
-                          />
+                          <img src={image?.src} width="100px" height="100px" />
                           <Box
                             sx={{
                               position: "absolute",

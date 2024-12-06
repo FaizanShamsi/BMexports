@@ -1160,6 +1160,7 @@ export default function Page() {
                       <div className="flex flex-wrap items-center justify-center">
                         {imagegallery.map((image: any, index: any) => (
                           <Box
+                            key={index}
                             sx={{
                               position: "relative",
                               "&:hover .deleteBox": {
@@ -1169,7 +1170,6 @@ export default function Page() {
                           >
                             <img
                               src={image?.src}
-                              key={index}
                               width="100px"
                               height="100px"
                             />
