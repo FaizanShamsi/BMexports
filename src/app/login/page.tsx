@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
@@ -29,7 +29,9 @@ const Login = () => {
         },
       );
       const data = await response.json();
+      console.log(data, "data");
       if (typeof window !== "undefined") {
+        localStorage.setItem("token", data?.access_token);
         localStorage.setItem("user", JSON.stringify(data.user));
       }
       if (response.ok) {
@@ -42,6 +44,18 @@ const Login = () => {
 
     console.log(user);
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const data = localStorage.getItem("user");
+      if (data) {
+        const user = JSON.parse(data);
+        if (user.id) {
+          router.push("/");
+        }
+      }
+    }
+  }, []);
 
   return (
     <div className="flex h-screen">
