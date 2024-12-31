@@ -629,6 +629,36 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   );
                 }}
               </SidebarLinkGroup>
+
+              <SidebarLinkGroup
+                activeCondition={
+                  pathname === "/" || pathname.includes("dashboard")
+                }
+              >
+                {(handleClick, open) => {
+                  return (
+                    <React.Fragment>
+                      <Link
+                        href="/inquiries"
+                        className={`group relative flex h-12 items-center gap-2.5 rounded-sm px-8 py-2 text-lg font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                          (pathname === "/inquiries" ||
+                            pathname.includes("inquiries")) &&
+                          "bg-[#600103] dark:bg-meta-4"
+                        }`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          sidebarExpanded
+                            ? handleClick()
+                            : setSidebarExpanded(true);
+                        }}
+                      >
+                        Inquiries
+                      </Link>
+                    </React.Fragment>
+                  );
+                }}
+              </SidebarLinkGroup>
+
               {/* <SidebarLinkGroup
                 activeCondition={
                   pathname === "/upload-file" ||
