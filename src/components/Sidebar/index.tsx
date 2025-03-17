@@ -623,6 +623,17 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                               Mileage Range List
                             </Link>
                           </li>
+                          <li className="my-1">
+                            <Link
+                              href="/carstock/inquiries"
+                              className={`group  relative  flex h-8 items-center gap-2.5 rounded-md font-medium  text-white duration-300 ease-in-out hover:text-white ${
+                                pathname === "/" && "text-white"
+                              }`}
+                            >
+                              {" "}
+                              Inquiries
+                            </Link>
+                          </li>
                         </ul>
                       </div>
                     </React.Fragment>
@@ -630,7 +641,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 }}
               </SidebarLinkGroup>
 
-              <SidebarLinkGroup
+              {/* <SidebarLinkGroup
                 activeCondition={
                   pathname === "/" || pathname.includes("dashboard")
                 }
@@ -652,12 +663,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                             : setSidebarExpanded(true);
                         }}
                       >
-                        Inquiries
+                        Inquiriesss
                       </Link>
                     </React.Fragment>
                   );
                 }}
-              </SidebarLinkGroup>
+              </SidebarLinkGroup> */}
 
               {/* <SidebarLinkGroup
                 activeCondition={
