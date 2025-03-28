@@ -120,6 +120,7 @@ export default function Page() {
         );
         const data = await res.json();
         setProducts(data.data);
+        setTotalRecords(data.total_records);
       } catch (error) {
         console.error("Error:", error);
       }
