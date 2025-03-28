@@ -101,7 +101,7 @@ export default function Page() {
   };
 
   const headers = [
-    { label: "Ref", className: "px-6 py-3 " },
+    { label: "Ref_no", className: "px-6 py-3 " },
     { label: "Placement", className: "px-6 py-3 " },
     { label: "Car_title", className: "px-6 py-3 " },
     { label: "Car_price", className: "px-6 py-3 " },

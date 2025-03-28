@@ -33,6 +33,7 @@ const   AddDataTable: React.FC<Props> = ({
               ))}
             </tr>
           </thead>
+          
           <tbody>
             {products?.map((product, index) => (
               <tr
@@ -45,6 +46,7 @@ const   AddDataTable: React.FC<Props> = ({
                     key={headerIndex}
                     className="px-6 py-4 text-base font-medium"
                   >
+                    
                     {header.label === "Actions" ? (
                       <div className="flex">
                         {renderActions && renderActions(product)}
