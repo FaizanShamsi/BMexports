@@ -113,7 +113,7 @@ export default function Page() {
   console.log("Total Pages: ", totalPages);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchSearchedProducts = async () => {
       try {
         const res = await fetch(
           `https://backend.bmglobalexports.com/api/search?page=${currentPage}&page_size=10&searchtype=${searchQuery}`
@@ -125,9 +125,10 @@ export default function Page() {
         console.error("Error:", error);
       }
     };
-
-    fetchProducts();
-  }, [searchQuery]);
+    if (searchQuery){
+    fetchSearchedProducts();
+  }
+  }, [searchQuery, currentPage]);
 
   const headers = [
     { label: "Ref_no", className: "px-5 py-3 " },
@@ -681,8 +682,10 @@ export default function Page() {
   }, []);
   
   useEffect(() => {
+    if (!searchQuery) {
     fetchProducts(currentPage);
-  }, [currentPage]);
+    }
+  }, [currentPage, searchQuery]);
 
   if (loading) {
     return <DefaultLayout>Loading...</DefaultLayout>;
