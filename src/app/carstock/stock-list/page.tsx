@@ -14,8 +14,16 @@ import SelectGroupTwo from "@/components/SelectGroup/SelectGroupTwo";
 import CheckboxTwo from "@/components/Checkboxes/CheckboxTwo";
 import dynamic from "next/dynamic";
 import { Box } from "@mui/material";
+import { useSearchParams } from "next/navigation";
+import Pagination from "@/components/pagination/Pagination";
 
 export default function Page() {
+  // const pageSize = searchParams.get("page_size") || 10;
+  const searchParams = useSearchParams();
+  const searchQuery = searchParams.get("searchtype") || "";
+  const [currentPage, setCurrentPage] = useState(Number(searchParams.get("page") || 1));
+  const [totalRecords, setTotalRecords] = useState(0);
+  const pageSize = 20;
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -82,17 +90,18 @@ export default function Page() {
     setImageGallery(imageGalleryClone);
   };
 
-  const fetchProducts = async () => {
+  const fetchProducts = async (page = currentPage) => {
     try {
       const response = await fetch(
-        "https://backend.bmglobalexports.com/api/all-stock",
+        `https://backend.bmglobalexports.com/api/all-stock?page=${page}`,
       );
       if (!response.ok) {
         throw new Error("Failed to fetch products");
       }
       const data = await response.json();
       console.log(data);
-      setProducts(data.data); // Assuming the API returns an array of products
+      setProducts(data.data);
+      setTotalRecords(data.total_records);
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -100,15 +109,36 @@ export default function Page() {
     }
   };
 
+  const totalPages = Math.ceil(totalRecords / pageSize);
+  console.log("Total Pages: ", totalPages);
+
+  useEffect(() => {
+    const fetchSearchedProducts = async () => {
+      try {
+        const res = await fetch(
+          `https://backend.bmglobalexports.com/api/search?page=${currentPage}&page_size=10&searchtype=${searchQuery}`
+        );
+        const data = await res.json();
+        setProducts(data.data);
+        setTotalRecords(data.total_records);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    if (searchQuery){
+    fetchSearchedProducts();
+  }
+  }, [searchQuery, currentPage]);
+
   const headers = [
-    { label: "Ref_no", className: "px-6 py-3 " },
-    { label: "Placement", className: "px-6 py-3 " },
-    { label: "Car_title", className: "px-6 py-3 " },
-    { label: "Car_price", className: "px-6 py-3 " },
-    { label: "Year", className: "px-6 py-3 " },
-    { label: "Make", className: "px-6 py-3 " },
-    { label: "car_model", className: "px-6 py-3 " },
-    { label: "Actions", className: "px-6 py-3 " },
+    { label: "Ref_no", className: "px-5 py-3 " },
+    { label: "Placement", className: "px-5 py-3 " },
+    { label: "Car_title", className: "px-5 py-3 " },
+    { label: "Car_price", className: "px-5 py-3 " },
+    { label: "Year", className: "px-5 py-3 " },
+    { label: "Make", className: "px-5 py-3 " },
+    { label: "car_model", className: "px-5 py-3 " },
+    { label: "Actions", className: "px-5 py-3 " },
   ];
 
   const handleEdit = async () => {
@@ -650,6 +680,12 @@ export default function Page() {
     fetchOptions();
     fetchProducts();
   }, []);
+  
+  useEffect(() => {
+    if (!searchQuery) {
+    fetchProducts(currentPage);
+    }
+  }, [currentPage, searchQuery]);
 
   if (loading) {
     return <DefaultLayout>Loading...</DefaultLayout>;
@@ -1248,6 +1284,11 @@ export default function Page() {
           <ToastContainer position="top-right" />
         </div>
       </CustomModal>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+      />
       <ToastContainer position="top-right" />
     </DefaultLayout>
   );

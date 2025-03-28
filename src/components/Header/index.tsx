@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import DarkModeSwitcher from "./DarkModeSwitcher";
 // import DropdownMessage from "./DropdownMessage";
@@ -5,11 +6,22 @@ import DarkModeSwitcher from "./DarkModeSwitcher";
 import DropdownUser from "./DropdownUser";
 import Image from "next/image";
 import DropdownNotification from "./DropdownNotification";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const Header = (props: {
   sidebarOpen: string | boolean | undefined;
   setSidebarOpen: (arg0: boolean) => void;
 }) => {
+
+  const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState("");
+  
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push(`/carstock/stock-list?searchtype=${searchTerm}&page=1`);
+  };
+  
   return (
     <header className="sticky top-0 z-1 flex w-full border-b-2 border-gray bg-white  ">
       {/* <header className="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none"> */}
@@ -69,12 +81,14 @@ const Header = (props: {
         </div>
         <div className="hidden sm:block">
           <div className="bg-red-500 relative flex h-12 w-94 items-center rounded-xl border border-[#D7D7D7] p-2">
-            <form action="#" method="POST" className="w-full">
+            <form onSubmit={handleSearch} action="#" /*method="POST"*/ className="w-full">
               <div className="relative w-full">
                 <input
                   type="text"
                   placeholder="Search here"
                   className="w-full border-white bg-transparent px-6 pr-10 font-medium focus:outline-none xl:w-125"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <button className="absolute right-3 top-1/2 -translate-y-1/2 transform">
                   <svg
